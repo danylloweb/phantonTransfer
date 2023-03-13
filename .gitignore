@@ -1,0 +1,16 @@
+/ms_notification/node_modules
+/api_transfer/public/hot
+/api_transfer/public/storage
+/api_transfer/storage/*.key
+/api_transfer/vendor
+/api_transfer/.env
+/ms_notification/.env
+/api_transfer/.phpunit.result.cache
+/api_transfer/Homestead.json
+/api_transfer/Homestead.yaml
+/api_transfer/npm-debug.log
+/api_transfer/yarn-error.log
+/.idea
+/.vscode
+/.docker
+/data/db/

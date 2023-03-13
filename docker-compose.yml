@@ -1,0 +1,46 @@
+version: "3.7"
+services:
+    api_transfer:
+        image: danyllo431/epionelaravel9:latest
+        restart: unless-stopped
+        container_name: api_transfer
+        volumes:
+            - ./api_transfer/:/var/www/html
+        ports:
+            -  80:80
+        depends_on:
+            - mysql
+            - redis
+        networks:
+            - picpay
+
+    mysql:
+        image: mysql:5.7.22
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: api_transfer
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_PASSWORD: root
+            MYSQL_USER: root
+        networks:
+            - picpay
+
+    redis:
+        image: redis:latest
+        networks:
+            - picpay
+
+    ms_notification:
+        image: danyllo431/ms_adonis:latest
+        restart: unless-stopped
+        container_name: notification_picpay
+        volumes:
+            - ./ms_notification/:/app
+        networks:
+            - picpay
+networks:
+    picpay:
+        driver: bridge
+
+
+
