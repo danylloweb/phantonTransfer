@@ -9,11 +9,16 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth:api'], function () {
     $except = ['except' => ['create', 'edit','delete','update','store']];
     Route::get('user-authenticated', 'UsersController@getUserLogged');
+
     Route::get('users', 'UsersController@index');
     Route::get('users/{id}', 'UsersController@show');
     Route::post('users', 'UsersController@storeUser');
+
     Route::post('transactions', 'TransactionsController@storeTransaction');
+    Route::get('transactions', 'TransactionsController@index');
+    Route::get('transactions/{id}', 'TransactionsController@show');
     Route::post('revert-transactions', 'TransactionsController@revertTransaction');
+
     Route::resource('userTypes', 'UserTypesController', $except);
     Route::resource('transactionStatuses', 'TransactionStatusesController', $except);
     Route::resource('transfers', 'TransfersController', $except);
