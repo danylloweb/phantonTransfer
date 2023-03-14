@@ -177,7 +177,7 @@ class PostRepository extends BaseRepository {
 
 ### Gerador
 
-Create your repositories easily through the generator.
+Crie seus repositórios facilmente através do gerador.
 
 #### Configuração
 
@@ -303,7 +303,7 @@ Como alternativa, você pode usar o comando craft para fazer a ligação para vo
 php artisan make:bindings Cats
 ```
 
-### Use methods
+### Uso de metodos
 
 ```php
 namespace App\Http\Controllers;
@@ -530,7 +530,7 @@ Use `skipCriteria` antes de qualquer outro método de encadeamento
 $posts = $this->repository->skipCriteria()->all();
 ```
 
-### Popping criteria
+### Critérios de popping
 
 Use `popCriteria` remover um critério
 
@@ -882,7 +882,7 @@ Você pode alterar o nome dos parâmetros no arquivo de configuração **config/
 
 Adicione uma camada de cache facilmente ao seu repositório
 
-#### Cache Usage
+#### Usando Cache
 
 Implementa a interface CacheableInterface e usa CacheableRepository Trait.
 
