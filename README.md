@@ -15,4 +15,7 @@ cd api_transfer/storage/
 sudo chown www-data:www-data oauth-public.key
 sudo chmod 600 oauth-public.key
 ```
-# Transfers
+# Postman Collection
+```bash
+TestPicPay.postman_collection.json
+```
